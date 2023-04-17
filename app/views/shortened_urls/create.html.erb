@@ -1,0 +1,22 @@
+<!-- app/views/shortened_urls/new.html.erb -->
+<%= form_with model: @shortened_url, url: shortened_urls_path, method: :post do |f| %>
+  <% if @shortened_url.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shortened_url.errors.count, "error") %> prohibited this URL from being saved:</h2>
+      <ul>
+        <% @shortened_url.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :original_url %>
+    <%= f.text_field :original_url %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Shorten" %>
+  </div>
+<% end %>
