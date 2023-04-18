@@ -34,7 +34,7 @@ RSpec.describe Link, type: :model do
         )
         link.save
 
-        link  = Link.new(
+        link_2  = Link.new(
             original_url: "https://www.favorate-website-link/article/how-to-bake",
             lookup_code: "12344566"
         )
