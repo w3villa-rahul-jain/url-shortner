@@ -1,0 +1,11 @@
+<h1>Shorten a URL</h1>
+
+<%= form_for UrlLink.new, url: url_links_path do |f| %>
+  <%= f.label :original_url %>
+  <%= f.text_field :original_url %>
+
+  <%= f.label :shortened_url %>
+  <%= f.text_field :shortened_url %>
+
+  <%= f.submit "Shorten URL" %>
+<% end %>
