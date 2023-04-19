@@ -1,4 +1,8 @@
 <%= @url.short_url %>
+<h1><span>Short Url : </span><%= @myurl %></h1>
+<h1><span>Short Url : </span><%= @url.id %></h1>
+<h1><span>No. of count : </span><%= @url.click_count %></h1>
+<%= link_to "Short Url",click_count_path(url: @url.short_url), method: :post %>
+<%= link_to "click here for going to original url", @original %>
 
-<%= link_to "click here",  @myurl%>
 
