@@ -204,6 +204,8 @@ GEM
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
     semantic_range (3.0.0)
+    shortener (0.7.2)
+      voight_kampff (~> 1.1.2)
     spring (4.1.1)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
@@ -220,6 +222,8 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    voight_kampff (1.1.4)
+      rack (>= 1.4, < 3.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
@@ -260,6 +264,7 @@ DEPENDENCIES
   rspec-rails (~> 4.0.0)
   sass-rails (>= 6)
   selenium-webdriver (>= 4.0.0.rc1)
+  shortener
   spring
   turbolinks (~> 5)
   tzinfo-data

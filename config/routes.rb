@@ -13,7 +13,10 @@ Rails.application.routes.draw do
   # get '/:short_url' => 'url_shortener#redirect'
   # post '/shorten' => 'url_shortener#shorten'
   
-  resources :urls, only: [:create, :show, :new]
+  resources :shortened_url
+  resources :urls
+
+  post "click_count", to: "urls#click_count"
   # get '/:short_url', to: 'urls#redirect'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
