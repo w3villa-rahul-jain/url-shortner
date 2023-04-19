@@ -1,26 +1,26 @@
 class UrlsController < ApplicationController
-    def create
-      url = Url.create(original_url: params[:original_url], short_url: generate_short_url)
-      render json: { short_url: url.short_url }
+  def new
+    @url = Url.new
+  end
+
+  def create
+    @url = Url.new(url_params)
+    if @url.save
+      redirect_to urls_show_path(short_url: @url.short_url)
+    else
+      render :new
     end
+  end
+
+  def show
+    @url = Url.find_by(short_url: params[:short_url])
+    @myurl = @url.original_url
   
-    def show
-      url = Url.find_by(short_url: params[:id])
-      render json: { clicks: url.clicks }
-    end
+  end
   
-    def redirect
-      url = Url.find_by(short_url: params[:short_url])
-      url.increment!(:clicks)
-      redirect_to url.original_url
-    end
+  private
   
-    private
-  
-    def generate_short_url
-      loop do
-        short_url = SecureRandom.urlsafe_base64(6)
-        return short_url unless Url.exists?(short_url: short_url)
-      end
-    end
+  def url_params
+    params.require(:url).permit(:original_url)
+  end
 end
