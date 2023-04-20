@@ -1,1 +1,0 @@
-json.short_url @shortened_url.short_url

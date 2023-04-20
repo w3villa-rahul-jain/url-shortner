@@ -1,9 +1,0 @@
-<%= form_with url: '/shorten', method: :post, local: true do |form| %>
-    <%= form.label :long_url, 'Long URL' %>
-    <%= form.text_field :long_url %>
-  
-    <%= form.label :short_url, 'Short URL' %>
-    <%= form.text_field :short_url %>
-  
-    <%= form.submit 'Shorten URL' %>
-  <% end %>

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   devise_for :users
   get '/s/:slug', to: 'links#show', as: :short
 
-  root to: "urls#index"
+  root to: "shortners#index"
   
   resources :urls
 
