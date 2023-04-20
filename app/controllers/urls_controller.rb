@@ -1,4 +1,8 @@
 class UrlsController < ApplicationController
+  def index
+    @urls = Url.all
+  end
+  
   def new
     @url = Url.new
   end
@@ -14,20 +18,16 @@ class UrlsController < ApplicationController
 
   def show
     @url_before = "localhost:3000/"
-    # @url_id = Url.find_by(short_url: params[:short_url]).id
     @url = Url.find_by(short_url: params[:short_url]) 
     @myurl = @url_before.concat(@url.short_url)
     @original = @url.original_url
-    
-      
   end
 
   def click_count
     @count = Url.find_by(short_url: params[:url])
     @url = @count.original_url
-
-    @c=@count.click_count
-    @count.update(click_count: @c.to_i+1)
+    @click = @count.click_count
+    @count.update(click_count: @click.to_i+1)
     redirect_to @url
   end
   

@@ -1,0 +1,22 @@
+<h1>List of all Url</h1>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Original Url</th>
+      <th scope="col">No. of Clicks</th>
+      <th scope="col">Short Url</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%  @urls.each do |url| %>
+    <tr>
+      <th><%= url.id %></th>
+      <td><%= url.original_url %></td>
+      <td><%= url.click_count == nil ? "0" : url.click_count %></td>
+      <td><%= url.short_url %></td>
+    </tr>
+    <% end %>
+    
+  </tbody>
+</table>
