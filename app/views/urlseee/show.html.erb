@@ -1,8 +1,0 @@
-<h1><span>Short Url ID : </span><%= @url.id %></h1>
-<h1><span>Short Url : <%= link_to  @myurl ,click_count_path(url: @url.short_url), method: :post %>
-</h1> 
-<h1><span>No. of Clicks count : </span><%= @url.click_count == nil ? "0" : @url.click_count  %></h1>
-<span>Click here to go long Url<span>
-<%= link_to "Short Url",click_count_path(url: @url.short_url), method: :post, class: "btn btn-primary text-white" %>
-
-
