@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_19_105118) do
+ActiveRecord::Schema.define(version: 2023_04_19_070016) do
 
   create_table "clicks", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "shortlink"
@@ -27,14 +27,6 @@ ActiveRecord::Schema.define(version: 2023_04_19_105118) do
     t.integer "clicked", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "shortened_urls", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "shortened_code"
-    t.text "long_url"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["shortened_code"], name: "index_shortened_urls_on_shortened_code"
   end
 
   create_table "urls", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|

@@ -19,7 +19,6 @@ class UrlsController < ApplicationController
 
   def show
     @url = Url.find_by(short_url: params[:short_url]) 
-    @url = Url.find_by(params[:id])
     @myurl = @url.short_url
     @original = @url.original_url
   end
@@ -30,6 +29,13 @@ class UrlsController < ApplicationController
     @click = @count.click_count
     @count.update(click_count: @click.to_i+1)
     redirect_to @url
+  end
+
+
+  def destory
+    @url = Url.find(params[:id])
+    @url.destroy
+
   end
   
   private
