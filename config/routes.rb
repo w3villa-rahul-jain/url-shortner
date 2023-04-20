@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'urls/new'
-  get 'urls/create'
-  get 'urls/show'
+  
   
 
+  resources :shortners
   devise_for :users
   get '/s/:slug', to: 'links#show', as: :short
 
@@ -12,7 +11,7 @@ Rails.application.routes.draw do
   
   resources :urls
 
-  post "click_count", to: "urls#click_count"
+  post "click_count", to: "shortners#click_count"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
 

@@ -10,16 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_19_070016) do
-
-  create_table "clicks", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "shortlink"
-    t.integer "ncount"
-    t.bigint "url_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["url_id"], name: "index_clicks_on_url_id"
-  end
+ActiveRecord::Schema.define(version: 2023_04_20_115326) do
 
   create_table "links", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "url"
@@ -29,13 +20,12 @@ ActiveRecord::Schema.define(version: 2023_04_19_070016) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "urls", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "shortners", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "original_url"
     t.string "short_url"
+    t.integer "click_count"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "click_count"
-    t.index ["short_url"], name: "index_urls_on_short_url"
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -50,5 +40,4 @@ ActiveRecord::Schema.define(version: 2023_04_19_070016) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "clicks", "urls"
 end

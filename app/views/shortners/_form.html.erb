@@ -1,0 +1,23 @@
+<%= form_with(model: shortner) do |form| %>
+  <% if shortner.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(shortner.errors.count, "error") %> prohibited this shortner from being saved:</h2>
+
+      <ul>
+        <% shortner.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :original_url %>
+    <%= form.text_field :original_url %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

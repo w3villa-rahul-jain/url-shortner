@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Original url:</strong>
+  <%= @shortner.original_url %>
+</p>
+
+<p>
+  <strong>Short url:</strong>
+  <%= @shortner.short_url %>
+</p>
+
+<%= link_to "Short Url",click_count_path(url: @short_url), method: :post, class: "btn btn-primary text-white" %>
+<h1><span>Short Url : <%= link_to  @short_url ,click_count_path(url: @short_url), method: :post %>
+
+
+<p>
+  <strong>Click count:</strong>
+  <%= @shortner.click_count == nil ? "0"  : @shortner.click_count %>
+</p>
+
+<%= link_to 'Edit', edit_shortner_path(@shortner) %> |
+<%= link_to 'Back', shortners_path %>
