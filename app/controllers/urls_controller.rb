@@ -18,9 +18,9 @@ class UrlsController < ApplicationController
   end
 
   def show
-    @url_before = "localhost:3000/"
     @url = Url.find_by(short_url: params[:short_url]) 
-    @myurl = @url_before.concat(@url.short_url)
+    @url = Url.find_by(params[:id])
+    @myurl = @url.short_url
     @original = @url.original_url
   end
 
