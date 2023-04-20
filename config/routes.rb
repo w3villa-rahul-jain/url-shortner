@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/s/:slug', to: 'links#show', as: :short
 
   # resources :shortened_urls, only: [:create,  :show]
-  root to: "homes#index"
+  root to: "urls#index"
   # get '/:short_url' => 'url_shortener#redirect'
   # post '/shorten' => 'url_shortener#shorten'
   

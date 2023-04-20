@@ -1,11 +1,17 @@
-<h1>List of all Url</h1>
+<div class="d-flex justify-content-between p-2">
+    <h3>List of all Url</h3>
+    <div class="d-flex">
+        <button class="btn btn-primary mr-2"><%=  link_to "Create Short Url", new_url_path, class: "text-white"  %></button>
+        <button class="btn btn-danger"><%= link_to "logout", destroy_user_session_path, method: :delete, class: "text-white" %></button>
+    </div>
+</div>
 <table class="table">
   <thead class="thead-dark">
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Original Url</th>
       <th scope="col">No. of Clicks</th>
-      <th scope="col">Short Url</th>
+      <th scope="col">Short Url Code</th>
     </tr>
   </thead>
   <tbody>
