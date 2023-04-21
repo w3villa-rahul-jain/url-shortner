@@ -9,7 +9,8 @@ class ShortnersController < ApplicationController
 
   # GET /shortners/1 or /shortners/1.json
   def show
-    @shortner = Shortner.find_by(params[:id])
+    # byebu
+    @shortner = Shortner.find(params[:id])
     @short_url = @shortner.short_url 
     @original = @shortner.original_url
   end
