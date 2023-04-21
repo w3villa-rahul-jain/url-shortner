@@ -48,3 +48,26 @@
    padding: 20px;
  }
 
+
+.login-form-page{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   min-height: 100vh;
+ }
+
+.login-form-page .login-form-box{
+   width: 300px;
+   background: white;
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+   padding: 20px;
+ }
+
+ .fit-auto-btn{
+   width: fit-content;
+   margin: auto;
+   color: white  !important;
+ }
