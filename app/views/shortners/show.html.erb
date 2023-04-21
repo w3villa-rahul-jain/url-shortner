@@ -1,3 +1,5 @@
+<div class="outer-box">
+<div class="show-box">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -10,8 +12,7 @@
   <%= @shortner.short_url %>
 </p>
 
-<%= link_to "Short Url",click_count_path(url: @short_url), method: :post, class: "btn btn-primary text-white" %>
-<h1><span>Short Url : <%= link_to  @short_url ,click_count_path(url: @short_url), method: :post %>
+<span>Click Here  : <%= link_to  @short_url ,click_count_path(url: @short_url), method: :post %></span  >
 
 
 <p>
@@ -19,5 +20,8 @@
   <%= @shortner.click_count == nil ? "0"  : @shortner.click_count %>
 </p>
 
-<%= link_to 'Edit', edit_shortner_path(@shortner) %> |
-<%= link_to 'Back', shortners_path %>
+<%= link_to 'Edit', edit_shortner_path(@shortner), class:"btn btn-primary text-white" %> 
+<%= link_to 'Back', shortners_path, class:"btn btn-secondary text-white" %>
+
+</div>
+</div>
