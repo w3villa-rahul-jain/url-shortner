@@ -1,13 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Shortners</h1>
 
-<table>
+<div class="container">
+<div class="d-flex justify-content-between align-items-center mb-2 bg-white p-2">
+<h3 class="font-bold mb-0">Shortners</h3>
+<%= link_to 'New Shortner', new_shortner_path, class:"btn btn-primary text-white" %>
+</div>
+
+<table class="table table-dark">
   <thead>
     <tr>
       <th>Original url</th>
       <th>Short url</th>
       <th>Click count</th>
+      <th>Show</th>
+      <th>Edit</th>
+      <th>delete</th>
+      
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,14 +27,12 @@
         <td><%= shortner.original_url %></td>
         <td><%= shortner.short_url %></td>
         <td><%= shortner.click_count==nil ? "0" : shortner.click_count  %></td>
-        <td><%= link_to 'Show', shortner %></td>
-        <td><%= link_to 'Edit', edit_shortner_path(shortner) %></td>
-        <td><%= link_to 'Destroy', shortner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', shortner, class:"text-white" %></td>
+        <td><%= link_to 'Edit', edit_shortner_path(shortner), class:"text-white" %></td>
+        <td><%= link_to 'Destroy', shortner, method: :delete, data: { confirm: 'Are you sure?' }, class:"text-white" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Shortner', new_shortner_path %>
+</div>

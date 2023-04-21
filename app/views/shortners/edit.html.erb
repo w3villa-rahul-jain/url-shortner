@@ -1,6 +1,10 @@
-<h1>Editing Shortner</h1>
-
-<%= render 'form', shortner: @shortner %>
-
-<%= link_to 'Show', @shortner %> |
-<%= link_to 'Back', shortners_path %>
+<div class="outer-box">
+    <div class="inner-box">
+        <h3>Editing Shortner</h3>
+        <%= render 'form', shortner: @shortner %>
+        <div class="d-flex">
+        <%= link_to 'Show', @shortner, class:"btn btn-info text-white mr-2" %> 
+        <%= link_to 'Back', shortners_path, class:"btn btn-secondary text-white" %>
+        </div>
+    </div>
+</div>
